@@ -21,6 +21,8 @@ const  LabelRangeStyle = styled.label`
 `
 
 type Props = {
+
+  name: string 
   label: string 
   legend: Array<string|number> 
   width:string  
@@ -29,9 +31,13 @@ type Props = {
     max: number
     step: number 
   }
+  onChange?: any 
+  onBlur?: any
+  value?: any
 }
 // myRangeParams = {{ min: '1', max: '6', step: '1' }}
-export const MyLabelRange: React.FC<Props> = ({  label, legend, width = '355px', myRangeParams }) => {
+export const MyLabelRange: React.FC<Props> = ({
+  name, label, legend, width = '355px', myRangeParams }) => {
    return (
     <LabelRangeStyle style={{'width': `${width}`} } >
       <p>{label}</p>
@@ -56,8 +62,14 @@ export const MyLabelRange: React.FC<Props> = ({  label, legend, width = '355px',
 
        <MyRange min={myRangeParams.min}
          max={myRangeParams.max}
-         step={myRangeParams.step} /> 
+         step={myRangeParams.step}
+         name={name} 
+         /> 
 
     </LabelRangeStyle>  
   )
 }
+
+// onChange = { handleChange }
+// onBlur = { handleBlur }
+// value = { values.email }

@@ -6,6 +6,8 @@ import { MyRange } from './MyRange'
  
 const LabelRadioStyle = styled.label`
   background: #FFD748;
+    opacity:0.7;
+
   border-radius: 20px;
   height: 44.44px;
   display: block;
@@ -21,24 +23,21 @@ text-align: center;
  
 
 color: #423F45;
+ 
+
+ 
 `
 
 type Props = {
   label: string 
-  width: string 
-  myRadioParams: { 
-    name: string
-    value: string
-  }
+  htmlFor: string 
+  width: string  
 }
-export const MyLabelRadio: React.FC<Props> = ({ label, myRadioParams, width }) => {
-   return (
-     <LabelRadioStyle style={{ 'width': `${width}` }}>
-       <span>{label}</span>
-       <MyRadio
-         name={myRadioParams.name}
-         value={myRadioParams.value} />
 
+export const MyLabelRadio: React.FC<Props> = ({ label, width, htmlFor }) => {
+   return (
+     <LabelRadioStyle style={{ 'width': `${width}` }} htmlFor={htmlFor}>
+        {label} 
      </LabelRadioStyle>  
    
   )

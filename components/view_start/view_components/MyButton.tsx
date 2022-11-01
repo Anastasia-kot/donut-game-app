@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
 import React from 'react'
+import Link from '../../../node_modules/next/link'
+ 
  
 
 const ButtonStyle = styled.button`
@@ -27,16 +29,37 @@ border-radius: 20px;
 
 export const MyButton = ({text}) => {
 
-  const onClick = (e) => {
-    e.preventDefault();
-    console.log('кнопка нажата')
+  // const onClick = async (e) => {
+  //   e.preventDefault();
+  //   console.log('кнопка нажата')
+
+  //  await fetch('http://localhost:3000/api/hello',
+  // {
+  //   method: 'PUT',
+  //   headers: { 'Content-Type': 'application/json'  },
+  //   body: JSON.stringify({
+  //     mainParams: {
+  //       quantity: 11,
+  //       valuesRange: 11,
+  //       order: 'high'
+  //     }
+  //   })
+  // })
+  // .then(res => res.json())
+  // .then(json => console.log(json))
+
+
     // собрать данные с формы и передать (через Локал Сторейдж??)
     // сгенерировать случайное число от 1 до 4 для выбора фона игры (1-печенье, 2 - новый год ...)
     // редирект на экран игры
-  }
+  // }
+
+
   return (
-      <ButtonStyle onClick={onClick}>
+ 
+    <ButtonStyle type="submit">
         {text}
       </ButtonStyle>
+
   )
 }

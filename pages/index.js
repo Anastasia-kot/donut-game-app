@@ -1,35 +1,39 @@
-// import Head from 'next/head'
-// import Image from 'next/image'
-// import { StartView } from '../components/view_start/view_start.jsx'
-// import styles from '../styles/Home.module.css'
-import {ThemeProvider} from '@emotion/react'
 import React from 'react'
-import { GameView } from '../components/view_game/view_game'
+import Image from 'next/image'
 
-const theme = {
-  'background-color': {
-    donat: '#DEC6AA',
-    coin: '#3A1F36',
-    newYear: '#132738',
-    flower: '#2D3539'
-  },
-  'background-image': {
-    // donat: '#DEC6AA',
-    // coin: '#3A1F36',
-    // newYear: '#132738',
-    // flower: '#2D3539'
-  },
+import styled from '@emotion/styled'
+
+import { MyButton } from './../components/view_start/view_components/MyButton'
+import { MyLabelRadio } from './../components/view_start/view_components/MyLabelRadio'
+import { MyLabelRange } from './../components/view_start/view_components/MyLabelRange'
+import { MyForm } from '../components/view_start/view_components/MyForm'
+ 
+
+const background = require('./../images/bgStart.png')
 
 
+//  background: darkblue;
+//  background-image: url(./../../images/bgStart.png);
+const StartViewContainer = styled.div`
+   
+    padding-top: 91px;
+    width:980px;
+    height:810px;
+    color: black;
 
-}
+`
+
+
+ 
 export default function Home () {
+   
   return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <GameView />
-      </div>
-    </ThemeProvider>
+ 
+    <StartViewContainer>
+      <Image src={background}   alt='background' style={{ position: 'absolute', top: '0', zIndex: '-1'}} />
+      <MyForm/>
+    </StartViewContainer>
+    
 
   )
 }

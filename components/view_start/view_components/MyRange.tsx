@@ -50,12 +50,16 @@ const RangeStyle = styled.input`
 
 `
 
-export const MyRange = ({min, max, step}) => {
+export const MyRange = ({ name, min, max, step,  }) => {
   return (
     <RangeStyle 
       type='range' 
       min={min} 
       max={max}
-      step={step} />  
+      step={step}
+      name={name}
+    
+
+      />  
   )
 }
