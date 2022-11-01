@@ -58,8 +58,6 @@ export const MyRange = ({ name, min, max, step,  }) => {
       max={max}
       step={step}
       name={name}
-    
-
       />  
   )
 }

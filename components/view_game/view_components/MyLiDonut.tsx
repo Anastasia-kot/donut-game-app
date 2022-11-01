@@ -27,7 +27,7 @@ const LiDonutStyle = styled.li`
 
 
 
-export const MyLiDonut = ({ i, onDragStart, onDragEnd, onDragOver, onDrop }) => {
+export const MyLiDonut = ({ i, onDragStart, onDragEnd, onDragOver, onDrop, gameResult }) => {
 //   className = { css`cursor: ${i.content ? 'grab' : 'arrow'} `
 // }
 // draggable = {!!i.content}
@@ -39,7 +39,7 @@ export const MyLiDonut = ({ i, onDragStart, onDragEnd, onDragOver, onDrop }) => 
 // i = { i }
   return (
     <LiDonutStyle
-      draggable={!!i.content}
+      draggable={!!i.content && !gameResult}
       onDragStart={onDragStart}
       onDragEnd={onDragEnd}
       onDragOver={onDragOver}

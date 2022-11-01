@@ -31,17 +31,15 @@ type Props = {
     max: number
     step: number 
   }
-  onChange?: any 
-  onBlur?: any
-  value?: any
 }
-// myRangeParams = {{ min: '1', max: '6', step: '1' }}
-export const MyLabelRange: React.FC<Props> = ({
+
+ export const MyLabelRange: React.FC<Props> = ({
   name, label, legend, width = '355px', myRangeParams }) => {
    return (
     <LabelRangeStyle style={{'width': `${width}`} } >
-      <p>{label}</p>
-      <p className={css`
+      <p key='1'>{label}</p>
+      <p key='2' 
+      className={css`
         display:flex; 
         justify-content: space-between; 
         width: ${width}; 

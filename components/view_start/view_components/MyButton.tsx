@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import Link from '../../../node_modules/next/link'
+
  
  
 
@@ -25,9 +26,13 @@ border-radius: 20px;
     color: #FFFFFF;
 `
 
+type Props = {
+  text: string
+  onClickRoute?: string
+}
 
 
-export const MyButton = ({text}) => {
+export const MyButton = ({ text, onClickRoute }) => {
 
   // const onClick = async (e) => {
   //   e.preventDefault();
@@ -55,11 +60,21 @@ export const MyButton = ({text}) => {
   // }
 
 
-  return (
- 
-    <ButtonStyle type="submit">
-        {text}
-      </ButtonStyle>
-
-  )
+  return (<>
+    { onClickRoute &&
+      
+        <Link href = { onClickRoute }>
+        <ButtonStyle >
+        { text }
+        </ButtonStyle >
+        </Link >}
+{
+  !onClickRoute &&
+        <ButtonStyle type="submit" >
+  {text}
+</ButtonStyle >
+    
+    
+    }
+  </>)
 }

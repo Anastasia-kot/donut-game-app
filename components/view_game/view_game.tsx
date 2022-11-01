@@ -1,9 +1,9 @@
-import { css } from '@emotion/css'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
-import React from 'react'
 import { BoardType, ItemType  } from  '../../types/types'
 import { MyBoard } from './view_components/MyBoard'
 import { MyLiDonut } from './view_components/MyLiDonut'
+import { MyModal } from './view_components/MyModal'
 
 
 
@@ -15,35 +15,34 @@ const GameViewContainer = styled.div`
     color: white;
 `
  
-export const GameView = () => {
+export const GameView = ({ gameValues, gameMode }) => {
+
+  const alphabet = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'];
+  // if (+values === 1) { i = alphabet[i - 1] }
+
+  const winSampleOfBoard = (gameMode === 'high') ? [...gameValues].sort((a, b) => a - b ) : [...gameValues].sort((a, b) => b - a)
+  console.log('winSampleOfBoard', [...winSampleOfBoard])
+  const [gameResult, setGameResult] = useState<boolean>(false);  // начальное состояние - партия не выйграна
+
+
   const [boards, setBoards] = React.useState(
     [
       {name: 'top',  
         items:
-          [
-            { id: 1, content: '1' },
-            { id: 2, content: '2' },
-            { id: 3, content: '3' },
-            { id: 4, content: '4' },
-            { id: 5, content: '5' }
-          ]
+          gameValues.map((v) => { return ({ id: gameValues.indexOf(v), content: v }) })
       },
       { name: 'bottom',
         items:
-          [
-            { id: 6, content: '' },
-            { id: 7, content: '' },
-            { id: 8, content: '' },
-            { id: 9, content: '' },
-            { id: 10, content: '' }
-
-          ]
+          gameValues.map((v) => { return ({ id: gameValues.indexOf(v) + gameValues.length, content: '' }) })
       }
     ] as Array<BoardType>
   )
   const [currentBoard, setCurrentBoard] = React.useState({} as BoardType)
   const [currentItem, setCurrentItem] = React.useState({}  as ItemType)
-  
+ 
+
+
+
   const onDragStartHandler = (e, board, item) => {
     // console.log(e, board, card)
     setCurrentBoard(board)
@@ -86,7 +85,18 @@ export const GameView = () => {
       )
     )
 
+    // определение результатов игры после каждого хода
+    setGameResult(true);
+    for (let i = 0; i < boards[1].items.length; i++) {
+      if (( boards[1].items[i].content !== winSampleOfBoard[i]) && (gameResult !== true)){
+        setGameResult(false)
+      }
+    }
+    if (gameResult === true) {
+      console.log('win')  
 
+    }
+ 
   }
 
 
@@ -136,6 +146,7 @@ export const GameView = () => {
               onDragOver={(e) => onDragOverHandler(e)}
               onDrop={(e) => onDropHandler(e, b, i)}
               i={i}
+              gameResult={gameResult}
 
             />)
         })}
@@ -143,6 +154,17 @@ export const GameView = () => {
         
         
       </MyBoard>)}
+
+      {gameResult && 
+        <MyModal
+        header='Победа!'
+        content='Молодец! Ты успешно справился с заданием!'
+        
+        buttonText='Заново'
+        onClickRoute='/'
+
+        />
+      }
       
   
     </GameViewContainer>

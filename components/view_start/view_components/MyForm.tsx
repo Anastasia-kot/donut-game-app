@@ -68,8 +68,8 @@ export const MyForm = () => {
 
     <FormStyle onSubmit={onSubmit}>
 
-      <MyLabelRange key={1} name='quantity' label='Кол-во предметов' legend={[2, 3, 4, 5]} width='355px' myRangeParams={{ min: 2, max: 5, step: 1 }}      />
-      <MyLabelRange key={2} name='values' label='Значения' legend={['A', 9, 19, 50, 99, 999]} width='530px' myRangeParams={{ min: 1, max: 6, step: 1 }}  />
+      <MyLabelRange key='11' name='quantity' label='Кол-во предметов' legend={[2, 3, 4, 5]} width='355px' myRangeParams={{ min: 2, max: 5, step: 1 }}      />
+      <MyLabelRange key='21' name='values' label='Значения' legend={['A', 9, 19, 50, 99, 999]} width='530px' myRangeParams={{ min: 1, max: 6, step: 1 }}  />
 
       <fieldset style={{ border: 'none', display: 'flex', justifyContent: 'space-between', width: '551px', margin: '0 auto', padding: '10px 0' }} >
         
@@ -78,22 +78,11 @@ export const MyForm = () => {
 
         <MyRadio id='radio2' name='radio' value='low'   />
         <MyLabelRadio label='По убыванию' width='234px' htmlFor='radio2' />
-
-
       </fieldset>
 
       <MyButton text='Играть' />
 
-      {/*  <input
-             type="password"
-             name="password"
-             onChange={handleChange}
-             onBlur={handleBlur}
-             value={values.password}
-           /> */}
-      {/* <button type="submit" disabled={isSubmitting}>
-             Submit
-           </button> */}
+  
     </FormStyle>
 
 
