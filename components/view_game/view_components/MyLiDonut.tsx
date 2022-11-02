@@ -32,6 +32,12 @@ const SpanStyled1 = styled.span`
   z-index : 1;
   text-shadow : '3px 0px 0px black, 0px 3px 0px black, -3px 0px 0px black, 0px -3px 0px black'  
 ` 
+const SpanStyled2 = styled.span`
+  position: absolute;
+  left: 0;    
+  z-index : 0;
+  
+` 
 
 export const MyLiDonut = ({ i, onDragStart, onDragEnd, onDragOver, onDrop, gameResult }) => {
  
@@ -44,7 +50,7 @@ export const MyLiDonut = ({ i, onDragStart, onDragEnd, onDragOver, onDrop, gameR
       onDrop={gameResult ? () => { } : onDrop}
      >
       <SpanStyled1 >{i.content}</SpanStyled1>
-      {i.content && <Image src={background} style={{ position: 'absolute', left: '0', 'z-index': '0' }} />}
+      {i.content && <SpanStyled2><Image src={background}/></SpanStyled2>}
 
     </LiDonutStyle>
   )

@@ -10,6 +10,10 @@
 + Styled-components [emotion styled-components](https://emotion.sh/docs/styled "https://emotion.sh/docs/styled")
 + Кроссбраузерность в последних версиях браузеров (chrome, firefox, safari, edge);
  
++ доделать игровые стили; `(в процессе стилизации + theme styled + генерация рандомной игровой темы)`
++ настроить простые импорты картинок; `(в процессе настройки)`
++ подключить игровые звуки; `(в процессе подключения)`
+
 
 
 
