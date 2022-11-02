@@ -50,7 +50,7 @@ export const MyLiDonut = ({ i, onDragStart, onDragEnd, onDragOver, onDrop, gameR
       onDrop={gameResult ? () => { } : onDrop}
      >
       <SpanStyled1 >{i.content}</SpanStyled1>
-      {i.content && <SpanStyled2><Image src={background}/></SpanStyled2>}
+      {i.content && <SpanStyled2><Image src={background} alt='donut'/></SpanStyled2>}
 
     </LiDonutStyle>
   )
