@@ -151,7 +151,7 @@ export const GameView = ({ winSample, gameValues, radio }) => {
         <SpanStyled >
           {radio === 'high' ? 'По возрастанию' : 'По убыванию'}
         </SpanStyled>
-        <Image src={arrow} style={{ position: 'absolute', bottom: '0px'}}/>
+        <Image src={arrow} style={{ position: 'absolute', bottom: '0px' }} alt="arrow"/>
       </div>
 
       {gameResult &&
