@@ -1,5 +1,5 @@
 # Игра-"развивашка" расставь карточки по порядку  
-### [ссылка](https://donut-game-app.vercel.app/ "https://donut-game-app.vercel.app/")
+### [https://donut-game-app.vercel.app/](https://donut-game-app.vercel.app/ "https://donut-game-app.vercel.app/")
 
 ## Использованный стек/ технические требования:
  
