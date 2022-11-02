@@ -89,7 +89,7 @@ export const MyForm = () => {
         <MyLabelRadio label='По убыванию' width='234px' htmlFor='radio2' />
       </FieldsetStyle>
 
-      <MyButton  text='Играть' />
+      <MyButton  text='Играть' onClickRoute=''/>
 
   
     </FormStyle>
