@@ -32,7 +32,7 @@ const FormStyle = styled.form`
     } 
     
     & fieldset {
-
+margin-bottom:89px;
         /* Checked */
         & input[type=radio]:checked + label {
         background: #FFD748;

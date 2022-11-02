@@ -10,7 +10,6 @@ background: #38DF7A;
 box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
 border-radius: 20px;
     margin: 0 auto;
-    margin-top:89px;
     Width:260px; 
     Height: 60px;
     border:none;

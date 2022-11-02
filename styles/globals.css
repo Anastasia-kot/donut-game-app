@@ -28,3 +28,27 @@ a {
     background: black;
   }
 }
+
+ @font-face {
+   font-family: "Circe Rounded";
+   font-style: normal;
+   font-weight: 400;
+   /* Браузер сначала попробует найти шрифт локально */
+   src: local("Circe Rounded"),
+     /* Если не получилось, загрузит woff2 */
+     url("./font/CirceRoundedAlt-Regular2.woff2") format("woff2"),
+     /* Если браузер не поддерживает woff2, загрузит woff */
+     url("./font/CirceRounded-Regular.woff") format("woff");
+ }
+
+    @font-face {
+      font-family: "Circe Rounded Regular5";
+      font-style: normal;
+      font-weight: 400;
+      /* Браузер сначала попробует найти шрифт локально */
+      src: local("Circe Rounded Regular5"),
+        /* Если не получилось, загрузит woff2 */
+        url("./font/CirceRounded-Regular5.woff2") format("woff2"),
+        /* Если браузер не поддерживает woff2, загрузит woff */
+        url("./font/CirceRounded-Regular5.woff") format("woff");
+    }
