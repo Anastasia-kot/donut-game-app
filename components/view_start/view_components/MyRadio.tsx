@@ -5,7 +5,14 @@ const RadioStyle = styled.input`
   display: none;
 `
 
-export const MyRadio = ({ name, value, id }) => {
+type Props = {
+  name:string
+  value: string
+  id: string
+  checked?: boolean
+}
+
+export const MyRadio: React.FC<Props> = ({ name, value, id }) => {
   return (
     <RadioStyle 
       type='radio' 

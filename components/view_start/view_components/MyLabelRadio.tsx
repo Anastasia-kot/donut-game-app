@@ -31,7 +31,8 @@ color: #423F45;
 type Props = {
   label: string 
   htmlFor: string 
-  width: string  
+  width: string
+  
 }
 
 export const MyLabelRadio: React.FC<Props> = ({ label, width, htmlFor }) => {
