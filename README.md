@@ -14,13 +14,13 @@
 
 
  ## Стартовая страница
-[image](./.screenshots/localhost_3000_%20(2).png)
+![image](./.screenshots/localhost_3000_%20(2).png)
  
  ## Игровая страница
-[image](./.screenshots/localhost_3000_%20(3).png)
+![image](./.screenshots/localhost_3000_%20(3).png)
 
  ## Финальная страница
-[image](./.screenshots/localhost_3000_%20(4).png)
+![image](./.screenshots/localhost_3000_%20(4).png)
 
 
  

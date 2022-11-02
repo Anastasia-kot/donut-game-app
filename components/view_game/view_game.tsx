@@ -22,11 +22,20 @@ const theme = {
     // newYear: '#132738',
     // flower: '#2D3539'
   },
-
-
-
 }
 
+
+const SpanStyled = styled.span`
+ 
+
+position: absolute;
+bottom: 20px;
+font- family: 'Calibri';
+font-style: normal;
+font-weight:400;
+font-size: 36px;
+line-height: 44px;
+` 
 //@ts-ignore
 export const GameView = ({ winSample, gameValues, radio }) => {
 
@@ -139,10 +148,9 @@ export const GameView = ({ winSample, gameValues, radio }) => {
         </MyBoard>)}
 
       <div style={{ position: 'absolute', bottom: '260px', left: '55px' , width:'400px'}}>
-        <span style={{ position: 'absolute', bottom: '20px',  'font- family': 'Calibri',
-        'font-style': 'normal',        'font-weight': '400',        'font-size': '36px',   'line-height': '44px' }}>
+        <SpanStyled >
           {radio === 'high' ? 'По возрастанию' : 'По убыванию'}
-        </span>
+        </SpanStyled>
         <Image src={arrow} style={{ position: 'absolute', bottom: '0px'}}/>
       </div>
 
