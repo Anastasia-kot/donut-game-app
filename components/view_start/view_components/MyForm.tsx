@@ -32,7 +32,9 @@ const FormStyle = styled.form`
     } 
     
     & fieldset {
-margin-bottom:89px;
+         
+
+
         /* Checked */
         & input[type=radio]:checked + label {
         background: #FFD748;
@@ -71,7 +73,7 @@ export const MyForm = () => {
       <MyLabelRange key='11' name='quantity' label='Кол-во предметов' legend={[2, 3, 4, 5]} width='355px' myRangeParams={{ min: 2, max: 5, step: 1 }}      />
       <MyLabelRange key='21' name='values' label='Значения' legend={['A', 9, 19, 50, 99, 999]} width='530px' myRangeParams={{ min: 1, max: 6, step: 1 }}  />
 
-      <fieldset style={{ border: 'none', display: 'flex', justifyContent: 'space-between', width: '551px', margin: '0 auto', padding: '10px 0' }} >
+      <fieldset style={{ border: 'none', display: 'flex', justifyContent: 'space-between', width: '551px', margin: '0 auto', 'margin-bottom':'88px', padding: '10px 0' }} >
         
         <MyRadio id='radio1' name='radio' value='high' checked />
         <MyLabelRadio label='По возрастанию' width='271px' htmlFor='radio1' />

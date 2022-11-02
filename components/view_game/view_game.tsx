@@ -4,6 +4,10 @@ import { BoardType, GameModeType, ItemType  } from  '../../types/types'
 import { MyBoard } from './view_components/MyBoard'
 import { MyLiDonut } from './view_components/MyLiDonut'
 import { MyModal } from './view_components/MyModal'
+import Image from 'next/image'
+
+
+const arrow = require('../../images/arrow.png')
 
 const theme = {
   'background-color': {
@@ -24,7 +28,7 @@ const theme = {
 }
 
 //@ts-ignore
-export const GameView = ({winSample,gameValues}) => {
+export const GameView = ({ winSample, gameValues, radio }) => {
 
   
 
@@ -65,20 +69,14 @@ export const GameView = ({winSample,gameValues}) => {
   // dnd функции
 
   const onDragStartHandler = (e, board, item) => {
-    // console.log(e, board, card)
     setCurrentBoard(board)
     setCurrentItem(item)
-
   }
   const onDragEndHandler = (e) => {
     // console.log(e,  )
-    e.target.style.background = 'blue'  // откуда взяли
-
-
   }
   const onDragOverHandler = (e) => {
-    e.preventDefault()
-    e.target.style.background = 'red' // над кем
+    e.preventDefault()// над кем
 
   }
   const onDropHandler = (e, board, item) => {
@@ -139,6 +137,14 @@ export const GameView = ({winSample,gameValues}) => {
 
 
         </MyBoard>)}
+
+      <div style={{ position: 'absolute', bottom: '260px', left: '55px' , width:'400px'}}>
+        <span style={{ position: 'absolute', bottom: '20px',  'font- family': 'Calibri',
+        'font-style': 'normal',        'font-weight': '400',        'font-size': '36px',   'line-height': '44px' }}>
+          {radio === 'high' ? 'По возрастанию' : 'По убыванию'}
+        </span>
+        <Image src={arrow} style={{ position: 'absolute', bottom: '0px'}}/>
+      </div>
 
       {gameResult &&
         <MyModal

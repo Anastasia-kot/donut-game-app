@@ -112,7 +112,7 @@ export default function Home() {
  
 return (
   <GameViewContainer>
-    <GameView  gameValues={gameValues} winSample={winSample}/>
+    <GameView  gameValues={gameValues} winSample={winSample} radio={radio}/>
   </GameViewContainer>
 )
 }

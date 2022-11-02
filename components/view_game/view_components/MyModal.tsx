@@ -21,6 +21,7 @@ const DivStyle = styled.div`
   position: absolute;
   top: 148px;
   left: 167px;
+  z-index:2;
 `
 
 const H1Style = styled.h1`

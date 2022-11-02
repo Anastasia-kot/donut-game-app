@@ -1,10 +1,13 @@
 import styled from '@emotion/styled'
 import React from 'react'
- 
+import Image from 'next/image'
+
+const background = require('../../../images/donut-style/donut.svg')
+
 
 const LiDonutStyle = styled.li`
-    background: #38DF7A;
-    border-radius: 20px;
+    
+    
     
 
     font-family: 'Helvetica';
@@ -23,29 +26,24 @@ const LiDonutStyle = styled.li`
     list-style-type: none;
     Width: 157px; 
     Height: 158px;
+    position:relative;
 `
 
 
 
 export const MyLiDonut = ({ i, onDragStart, onDragEnd, onDragOver, onDrop, gameResult }) => {
-//   className = { css`cursor: ${i.content ? 'grab' : 'arrow'} `
-// }
-// draggable = {!!i.content}
  
-// onDragStart = {(e) => onDragStartHandler(e, b, i)}
-// onDragEnd = {(e) => onDragEndHandler(e)}
-// onDragOver = {(e) => onDragOverHandler(e)}
-// onDrop = {(e) => onDropHandler(e, b, i)}
-// i = { i }
   return (
     <LiDonutStyle
       draggable={!!i.content && !gameResult}
-      onDragStart={onDragStart}
-      onDragEnd={onDragEnd}
-      onDragOver={onDragOver}
-      onDrop={onDrop}
+      onDragStart={gameResult ? ()=>{} : onDragStart}
+      onDragEnd={gameResult ? () => { } : onDragEnd}
+      onDragOver={gameResult ? () => { } : onDragOver}
+      onDrop={gameResult ? () => { } : onDrop}
      >
-      {i.content}
+      <span style={{ position: 'absolute', left: '35%', top: '35%', 'z-index': '1', 'text-shadow': '3px 0px 0px black, 0px 3px 0px black, -3px 0px 0px black, 0px -3px 0px black' }}>{i.content}</span>
+      {i.content && <Image src={background} style={{ position: 'absolute', left: '0', 'z-index': '0' }} />}
+
     </LiDonutStyle>
   )
 }
