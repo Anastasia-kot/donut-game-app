@@ -25,11 +25,12 @@ const LiDonutStyle = styled.li`
     position:relative;
 `
 
-const SpanStyled = styled.span`
-   position: absolute;
-    left: 35%; 
-    top:  35% ;  z-index : 1;
-   text-shadow : '3px 0px 0px black, 0px 3px 0px black, -3px 0px 0px black, 0px -3px 0px black'  
+const SpanStyled1 = styled.span`
+  position: absolute;
+  left: 35%; 
+  top:  35% ;  
+  z-index : 1;
+  text-shadow : '3px 0px 0px black, 0px 3px 0px black, -3px 0px 0px black, 0px -3px 0px black'  
 ` 
 
 export const MyLiDonut = ({ i, onDragStart, onDragEnd, onDragOver, onDrop, gameResult }) => {
@@ -42,7 +43,7 @@ export const MyLiDonut = ({ i, onDragStart, onDragEnd, onDragOver, onDrop, gameR
       onDragOver={gameResult ? () => { } : onDragOver}
       onDrop={gameResult ? () => { } : onDrop}
      >
-      <SpanStyled >{i.content}</SpanStyled>
+      <SpanStyled1 >{i.content}</SpanStyled1>
       {i.content && <Image src={background} style={{ position: 'absolute', left: '0', 'z-index': '0' }} />}
 
     </LiDonutStyle>
