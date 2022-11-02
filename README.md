@@ -1,3 +1,38 @@
+# Игра-"развивашка" расставь карточки по порядку  
+### ссылка
+
+## Использованный стек/ технические требования:
+ 
++ Вёрстка по [макету Figma](https://www.figma.com/file/Ttn7siGjRcFZ0OzPbT2Xxg/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5?node-id=1%3A2642 "https://www.figma.com/file/Ttn7siGjRcFZ0OzPbT2Xxg/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5?node-id=1%3A2642")
++ Next.js;
++ TypeScript;
++ React;
++ Styled-components [emotion styled-components](https://emotion.sh/docs/styled "https://emotion.sh/docs/styled")
++ Кроссбраузерность в последних версиях браузеров (chrome, firefox, safari, edge);
+ 
+
+
+
+ ## Стартовая страница
+[image](./.screenshots/localhost_3000_%20(2).png)
+ 
+ ## Игровая страница
+[image](./.screenshots/localhost_3000_%20(3).png)
+
+ ## Финальная страница
+[image](./.screenshots/localhost_3000_%20(4).png)
+
+
+ 
+
+ 
+
+
+
+
+
+# Как запустить проект
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
