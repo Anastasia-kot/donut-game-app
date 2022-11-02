@@ -6,10 +6,6 @@ const background = require('../../../images/donut-style/donut.svg')
 
 
 const LiDonutStyle = styled.li`
-    
-    
-    
-
     font-family: 'Helvetica';
     font-style: normal;
     font-weight: 400;
@@ -29,7 +25,12 @@ const LiDonutStyle = styled.li`
     position:relative;
 `
 
-
+const SpanStyled = styled.span`
+   position: absolute;
+    left: 35%; 
+    top:  35% ;  z-index : 1;
+   text-shadow : '3px 0px 0px black, 0px 3px 0px black, -3px 0px 0px black, 0px -3px 0px black'  
+` 
 
 export const MyLiDonut = ({ i, onDragStart, onDragEnd, onDragOver, onDrop, gameResult }) => {
  
@@ -41,7 +42,7 @@ export const MyLiDonut = ({ i, onDragStart, onDragEnd, onDragOver, onDrop, gameR
       onDragOver={gameResult ? () => { } : onDragOver}
       onDrop={gameResult ? () => { } : onDrop}
      >
-      <span style={{ position: 'absolute', left: '35%', top: '35%', 'z-index': '1', 'text-shadow': '3px 0px 0px black, 0px 3px 0px black, -3px 0px 0px black, 0px -3px 0px black' }}>{i.content}</span>
+      <SpanStyled >{i.content}</SpanStyled>
       {i.content && <Image src={background} style={{ position: 'absolute', left: '0', 'z-index': '0' }} />}
 
     </LiDonutStyle>
