@@ -5,6 +5,8 @@ import { MyBoard } from './view_components/MyBoard'
 import { MyLiDonut } from './view_components/MyLiDonut'
 import { MyModal } from './view_components/MyModal'
 import Image from 'next/image'
+import { TouchBackend } from 'react-dnd-touch-backend'
+import { DndProvider } from 'react-dnd'
 
 
 const arrow = require('../../images/arrow.png')
@@ -118,11 +120,16 @@ export const GameView = ({ winSample, gameValues, radio }) => {
 
 
 
+  const opts = {
+    enableTouchEvents:true,
+    enableMouseEvents:true,
+    touchSlop: '5px',
 
+  }
 
 
   return (
-    
+    // <DndProvider backend={TouchBackend} options={opts}>
 <>
       {boards.map(b =>
         <MyBoard
@@ -165,6 +172,7 @@ export const GameView = ({ winSample, gameValues, radio }) => {
         />
       }
 
-</>
+      </>
+      // </DndProvider>
   )
 }
